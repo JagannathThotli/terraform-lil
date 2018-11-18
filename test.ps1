@@ -1,0 +1,2 @@
+$pwd = ConvertTo-SecureString 'Password2008' -AsPlainText -Force
+Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath "C:\Windows\NTDS" -DomainMode "WinThreshold" -DomainName "jag.local" -DomainNetbiosName "JAG" -ForestMode "WinThreshold" -InstallDns:$false -LogPath "C:\Windows\NTDS" -NoRebootOnCompletion:$false -SysvolPath "C:\Windows\SYSVOL" -Force:$true -SafeModeAdministratorPassword $pwd
