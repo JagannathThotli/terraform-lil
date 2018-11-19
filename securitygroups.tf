@@ -24,8 +24,20 @@ resource "aws_security_group" "allow-all" {
     protocol = "tcp"
     to_port = 6556
     cidr_blocks = ["0.0.0.0/0"]
+    }
+  ingress {
+    from_port = 0
+    to_port = 0
+    protocol = "icmp"
+    cidr_blocks = ["0.0.0.0/0"]
+    }
+  ingress {
+    from_port = 0
+    to_port = 0
+    protocol = "udp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
   tags {
-    Name = "allow-RDP"
+    Name = "allow-all"
   }
 }
